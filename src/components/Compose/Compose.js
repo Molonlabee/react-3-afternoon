@@ -21,12 +21,18 @@ export default class Compose extends Component {
   }
 
   createPost() {
+    const{text} = this.state;
+    const{createPostFn} = this.props;
 
+    createPostFn(text);
+    this.setState({text, " "};)
+    // updatePostFn(id, text);
+    // hideEdit();
   }
 
   render() {
     // Destructuring
-    const { text } = this.state;
+    const { Post, text } = this.state;
 
     return (
       <section className="Compose__parent">
@@ -46,6 +52,7 @@ export default class Compose extends Component {
 
         <div className="Compose__bottom">
           <button onClick={ this.createPost }>Compose</button>
+          {/* <span onClick={ () => deletePostFn( id ) }>Delete</span> */}
         </div>
       </section>
     )
