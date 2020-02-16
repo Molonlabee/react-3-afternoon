@@ -25,7 +25,7 @@ export default class Compose extends Component {
     const{createPostFn} = this.props;
 
     createPostFn(text);
-    this.setState({text, " "};)
+    this.setState({text: " "});
     // updatePostFn(id, text);
     // hideEdit();
   }

@@ -9,7 +9,7 @@ import './Post.css';
 
 import Edit from './Edit/Edit';
 
-//////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *APP* COMPONENT
+// THIS COMPONENT IS BEING RENDERED IN THE *APP* COMPONENT
 
 export default class Post extends Component {
   constructor() {
@@ -56,7 +56,7 @@ export default class Post extends Component {
       // const showMasterMenu = this.state.showMasterMenu
 
     const { editing, showMasterMenu } = this.state;
-    const { text, date } = this.props;
+    const { id, text, date, updatePostFn, deletePostFn } = this.props;
 
     return (
       // Main body of post

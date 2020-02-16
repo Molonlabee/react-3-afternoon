@@ -20,14 +20,12 @@ class App extends Component {
   }
   
   componentDidMount() {
-////////////
+
     axios.get("https://practiceapi.devmountain.com/api/posts").then(results => {
       this.setState({posts:results.data});
-    // })
-    // .catch((error)=>{
-    //   console.log(error);
+  
     });
-////////////////
+
 }
 
   updatePost(id, text) {
@@ -45,9 +43,9 @@ class App extends Component {
   }
 
   createPost(text) {
-    axios.post('https://practiceapi.devmountain.com/api/post', {text})
+    axios.post('https://practiceapi.devmountain.com/api/posts', {text})
     .then(results => {
-      this.setState({post:results.data});
+      this.setState({posts:results.data});
     });
   }
 
@@ -65,9 +63,9 @@ class App extends Component {
         {
           posts.map(post =>(
             <Post key={ post.id } 
+                  id={post.id}
                  text={post.text}
                  date={post.date}
-                   id={post.id}
                    updatePostFn={this.updatePost}
                    deletePostFn={this.deletePost}
             />
